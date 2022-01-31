@@ -52,10 +52,9 @@ function putStoriesOnPage() {
 }
 
 function userSubmitStoryForm(){
-  console.debug('userSubmitStoryForm', evt);
-  
+  console.debug('userSubmitStoryForm');
+  console.log('hello world');
+  // addStory(currentUser, {`${$storyTitle}, ${$storyAuthor}, ${$storyUrl}`});
   addStory(currentUser, {storyTitleVal, storyAuthorVal, storyUrlVal});
-  // putStoriesOnPage();
 }
-
 $newStoryForm.on('submit', userSubmitStoryForm);
