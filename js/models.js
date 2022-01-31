@@ -38,6 +38,7 @@ class StoryList {
   constructor(stories) {
     this.stories = stories;
   }
+  
 
   /** Generate a new StoryList. It:
    *
@@ -101,9 +102,11 @@ class StoryList {
     user.ownStories = user.ownStories.filter(s => s.storyId !== storyId);
     user.favorites = user.favorites.filter(s => s.storyId !== storyId);
   }
+  
 }
 
 
+  
 
 /******************************************************************************
  * User: a user in the system (only used to represent the current user)
