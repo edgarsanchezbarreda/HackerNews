@@ -12,12 +12,6 @@ const $signupForm = $("#signup-form");
 const $newStoryForm = $('#new-story-form');
 
 const $submitStoryFormButton = $('#submit-story-form-button');
-const $storyAuthor = $('#create-author');
-const storyAuthorVal = $storyAuthor.val();
-const $storyTitle = $('#create-title');
-const storyTitleVal = $storyTitle.val();
-const $storyUrl = $('#create-url');
-const storyUrlVal = $storyUrl.val();
 
 const $navLogin = $("#nav-login");
 const $navUserProfile = $("#nav-user-profile");

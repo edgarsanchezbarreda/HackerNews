@@ -51,10 +51,23 @@ function putStoriesOnPage() {
   $allStoriesList.show();
 }
 
-function userSubmitStoryForm(){
+async function userSubmitStoryForm(evt){
   console.debug('userSubmitStoryForm');
-  console.log('hello world');
-  // addStory(currentUser, {`${$storyTitle}, ${$storyAuthor}, ${$storyUrl}`});
-  addStory(currentUser, {storyTitleVal, storyAuthorVal, storyUrlVal});
+  evt.preventDefault();
+
+  const storyTitle = $('#create-title').val();
+  const storyUrl = $('#create-url').val();
+  const storyAuthor = $('#create-author').val();
+  const username = currentUser.username;
+  const storyFormData = {storyTitle, storyAuthor, storyUrl, username};
+
+  const story = await storyList.addStory(currentUser, storyFormData);
+
+  const $story = generateStoryMarkup(story);
+  $allStoriesList.prepend($story);
+
+  $newStoryForm.slideUp("slow");
+  $newStoryForm.trigger("reset");
 }
-$newStoryForm.on('submit', userSubmitStoryForm);
+
+$newStoryForm.on("submit", userSubmitStoryForm);
